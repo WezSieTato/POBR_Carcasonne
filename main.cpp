@@ -5,7 +5,7 @@
 int main(int, char *[]) {
     std::cout << "Start ..." << std::endl;
 
-    cv::Mat image = cv::imread("test.jpeg");
+    cv::Mat image = cv::imread("swinie/s21.jpeg");
     cv::Mat prog = progowanie(image, 175, false);
 
     prog = rankFilter(prog, 3, 8);
@@ -18,14 +18,19 @@ int main(int, char *[]) {
 
     int i = 0;
     for( MatBox mat : list){
-        cv::imshow(std::to_string(i), mat.first);
+        int a = 3;
+        if(i == a)
+            cv::imshow(std::to_string(i), mat.first);
+        if(i == a){
+            MatInfo matInfo = doTheMath(mat);
+            printMatInfo(matInfo);
+        }
         ++i;
-        MatInfo matInfo = doTheMath(mat);
-        printMatInfo(matInfo);
+
     }
 
-    cv::imshow("Filtrowany",prog);
-    cv::imshow("Normalny",image);
+//    cv::imshow("Filtrowany",prog);
+//    cv::imshow("Normalny",image);
 
 //    cv::imwrite("prog.jpeg", max);
 //    cv::namedWindow("Max", cv::WINDOW_NORMAL);
