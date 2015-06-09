@@ -37,12 +37,22 @@ int main(int, char *[]) {
     for( MatBox mat : list){            
         ++i;
         MatInfo matInfo = doTheMath(mat);
-        if(isSheep(matInfo))
+        bool recognized = false;
+        if(isSheep(matInfo)){
             cv::imshow(std::string("Sheep ").append(std::to_string(i)), mat.first);
+            recognized = true;
+        }
 
-        if(isPig(matInfo))
+        if(isPig(matInfo)){
             cv::imshow(std::string("Pig ").append(std::to_string(i)), mat.first);
-//        printMatInfo(matInfo);
+            recognized = true;
+        }
+
+        if(recognized){
+            std::cout << "Id: " << i << " MathInfo: " ;
+            printMatInfo(matInfo);
+
+        }
     }
 
     cv::imshow("Filtrowany",prog);
