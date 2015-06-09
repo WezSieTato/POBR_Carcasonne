@@ -57,9 +57,9 @@ MatInfo doTheMath(const MatBox &matBox)
     float i = m10/m00;
     float j = m01/m00;
 
-    float M00 = m00;
-    float M01 = 0;
-    float M10 = 0;
+//    float M00 = m00;
+//    float M01 = 0;
+//    float M10 = 0;
     float M11 = m11 - m10*m01 / m00;
     float M20 = m20 - pow(m10, 2) / m00;
     float M02 = m02 - pow(m01, 2) / m00;
@@ -91,15 +91,17 @@ MatInfo doTheMath(const MatBox &matBox)
 
 void printMatInfo(const MatInfo& mat)
 {
-    std::cout<<"M1: "<<mat.M1;
-    std::cout<<" M2: "<<mat.M2;
-    std::cout<<" M3: "<<mat.M3;
-    std::cout<<" M4: "<<mat.M4;
-    std::cout<<" M5: "<<mat.M5;
-    std::cout<<" M6: "<<mat.M6;
-    std::cout<<" M7: "<<mat.M7;
-    std::cout<<" M8: "<<mat.M8;
-    std::cout<<" M9: "<<mat.M9;
-    std::cout<<" M10: "<<mat.M10;
+    std::cout<<"\t"<<mat.S;
+    std::cout<<"\t"<<mat.L;
+    std::cout<<"\t"<<mat.M1;
+    std::cout<<"\t"<<mat.M2;
+    std::cout<<"\t"<<mat.M3;
+    std::cout<<"\t"<<mat.M4;
+    std::cout<<"\t"<<mat.M5;
+    std::cout<<"\t"<<mat.M6;
+    std::cout<<"\t"<<mat.M7;
+    std::cout<<"\t"<<mat.M8;
+    std::cout<<"\t"<<mat.M9;
+    std::cout<<"\t"<<mat.M10;
     std::cout<<std::endl;
 }
