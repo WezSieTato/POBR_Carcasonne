@@ -15,7 +15,7 @@ cv::imshow("Filtrowany",(a));}
 int main(int, char *[]) {
     std::cout << "Start ..." << std::endl;
 
-    cv::Mat image = cv::imread("Skanuj.jpeg");
+    cv::Mat image = cv::imread("plytki/Skanuj2.jpeg");
     cv::Mat prog = progowanie(image, 175, false);
 
     cv::imshow("Normalny",image);
