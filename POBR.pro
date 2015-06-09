@@ -12,13 +12,13 @@ SOURCES += main.cpp \
 
 LIBS += -L/usr/local/lib \
     -lopencv_core \
-    -lopencv_highgui
+    -lopencv_highgui \
+    -lopencv_features2d \
+    -lopencv_imgproc
 
 QMAKE_CXXFLAGS+=-std=c++11
-QMAKE_CXXFLAGS+=-stdlib=libc++
 
 QMAKE_LFLAGS+=-std=c++11
-QMAKE_LFLAGS+=-stdlib=libc++
 
 INCLUDEPATH += /usr/local/include
 
