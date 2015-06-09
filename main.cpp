@@ -1,5 +1,6 @@
 #include "processing.h"
 #include "cutting.h"
+#include "moments.h"
 
 int main(int, char *[]) {
     std::cout << "Start ..." << std::endl;
@@ -19,6 +20,8 @@ int main(int, char *[]) {
     for( MatBox mat : list){
         cv::imshow(std::to_string(i), mat.first);
         ++i;
+        MatInfo matInfo = doTheMath(mat);
+        printMatInfo(matInfo);
     }
 
     cv::imshow("Filtrowany",prog);
