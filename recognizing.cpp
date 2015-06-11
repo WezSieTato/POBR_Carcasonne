@@ -26,7 +26,7 @@ bool isSheep(const MatInfo &info)
 
     between(info.S, 1420 , 1520);
     between(info.L, 100, 160);
-    between(info.M1, 0.196f, 0.20065f);
+    between(info.M1, 0.196f, 0.2009f);
     between(info.M2, 0.0416f, 0.048f);
     between(info.M8, -0.0025f, 0.0016f);
 //    between(info.M9, -0.00051f, 0.00045f);

@@ -21,7 +21,7 @@ int main(int, char *[]) {
 //    vec.push_back(cv::imread("owce/o21.jpeg"));
 //        vec.push_back(cv::imread("swinie/s23.jpeg"));
 
-//        vec.push_back(cv::imread("plytki/pociete/p1.jpeg"));
+        vec.push_back(cv::imread("plytki/pociete/p1.jpeg"));
 //        vec.push_back(cv::imread("plytki/pociete/p2.jpeg"));
 //        vec.push_back(cv::imread("plytki/pociete/p3.jpeg"));
 //        vec.push_back(cv::imread("plytki/pociete/p4.jpeg"));
@@ -39,20 +39,18 @@ int main(int, char *[]) {
 //        vec.push_back(cv::imread("plytki/pociete/p16.jpeg"));
 //        vec.push_back(cv::imread("plytki/pociete/p17.jpeg"));
 //        vec.push_back(cv::imread("plytki/pociete/p18.jpeg"));
-        vec.push_back(cv::imread("plytki/Skanuj8.jpeg"));
-        vec.push_back(cv::imread("plytki/Skanuj9.jpeg"));
-        vec.push_back(cv::imread("plytki/Skanuj10.jpeg"));
-        vec.push_back(cv::imread("plytki/Skanuj11.jpeg"));
+//        vec.push_back(cv::imread("plytki/Skanuj8.jpeg"));
+//        vec.push_back(cv::imread("plytki/Skanuj9.jpeg"));
+//        vec.push_back(cv::imread("plytki/Skanuj10.jpeg"));
+//        vec.push_back(cv::imread("plytki/Skanuj11.jpeg"));
 
     int z = 0;
     for(cv::Mat &image : vec){
-        //  }
-        //    cv::Mat image = cv::imread("plytki/pociete/p1.jpeg");
+
 
         std::string name = std::to_string(z).append(" obraz ");
         cv::Mat prog = progowanie(image, 175, false);
 
-        //        cv::imshow(name,image);
         if(presentation){
             std::cout << "Zrobione\n"; \
             cv::imshow("Filtrowany",prog);
@@ -101,7 +99,7 @@ int main(int, char *[]) {
         std::cout << "Rozpoznanie zakonczone\n";
 
         //    cv::imwrite("prog.jpeg", max);
-        //    cv::namedWindow("Max", cv::WINDOW_NORMAL);
+        cv::namedWindow(name, cv::WINDOW_NORMAL);
 
         cv::imshow(name,image);
         z++;
