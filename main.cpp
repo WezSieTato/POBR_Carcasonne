@@ -2,6 +2,7 @@
 #include "cutting.h"
 #include "moments.h"
 #include "recognizing.h"
+#include "paint.h"
 #include <iostream>
 
 #define presentation false
@@ -15,7 +16,7 @@ cv::imshow("Filtrowany",(a));}
 int main(int, char *[]) {
     std::cout << "Start ..." << std::endl;
 
-    cv::Mat image = cv::imread("plytki/Skanuj2.jpeg");
+    cv::Mat image = cv::imread("plytki/pociete/p1.jpeg");
     cv::Mat prog = progowanie(image, 175, false);
 
     cv::imshow("Normalny",image);
@@ -39,12 +40,15 @@ int main(int, char *[]) {
         MatInfo matInfo = doTheMath(mat);
         bool recognized = false;
         if(isSheep(matInfo)){
-            cv::imshow(std::string("Sheep ").append(std::to_string(i)), mat.first);
+//            cv::imshow(std::string("Sheep ").append(std::to_string(i)), mat.first);
+            drawRect(image, matInfo.box, 255, 0 ,0);
             recognized = true;
         }
 
         if(isPig(matInfo)){
-            cv::imshow(std::string("Pig ").append(std::to_string(i)), mat.first);
+//            cv::imshow(std::string("Pig ").append(std::to_string(i)), mat.first);
+            drawRect(image, matInfo.box, 0, 0 ,255);
+
             recognized = true;
         }
 
@@ -60,6 +64,9 @@ int main(int, char *[]) {
 
 //    cv::imwrite("prog.jpeg", max);
 //    cv::namedWindow("Max", cv::WINDOW_NORMAL);
+
+    cv::imshow("Normalny",image);
+
 
     cv::waitKey(-1);
     return 0;

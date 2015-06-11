@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     processing.cpp \
     cutting.cpp \
     moments.cpp \
-    recognizing.cpp
+    recognizing.cpp \
+    paint.cpp
 
 LIBS += -L/usr/local/lib \
     -lopencv_core \
@@ -36,5 +37,6 @@ HEADERS += \
     processing.h \
     cutting.h \
     moments.h \
-    recognizing.h
+    recognizing.h \
+    paint.h
 
